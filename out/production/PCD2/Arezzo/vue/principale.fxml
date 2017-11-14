@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.text.Text?>
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Arezzo.vue.Piano">
   <children>
     <MenuBar VBox.vgrow="NEVER">
@@ -47,7 +48,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Button>
-            <Label fx:id="vuePartition" prefHeight="170.0" prefWidth="386.0" GridPane.columnIndex="1" />
+            <Text fx:id="chaine" GridPane.columnIndex="1" />
          </children>
       </GridPane>
   </children>

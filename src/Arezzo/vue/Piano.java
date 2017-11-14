@@ -2,6 +2,7 @@ package Arezzo.vue;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.text.Text;
 import partition.Melodie;
 
 /**
@@ -9,16 +10,11 @@ import partition.Melodie;
  */
 public class Piano {
 
-    Melodie melodie;
-    String morceau;
+    @FXML private Text chaine;
 
-    public Piano(Melodie melodie){
-        morceau = "";
-    }
-
+    @FXML
     public void appuieDo(){
-        morceau.concat("C"+" ");
-        melodie.setMelodie(morceau);
+        chaine.setText(chaine.getText()+"C ");
     }
 
 }

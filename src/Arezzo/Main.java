@@ -10,16 +10,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import partition.Melodie;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader();
         Melodie melodie  = new Melodie(new TunePlayer());
-
+        melodie.setMelodie("");
         loader.setLocation(getClass().getResource("vue/principale.fxml"));
-        loader.setControllerFactory(param -> {return new Piano(melodie);});
-        loader.setControllerFactory(param2 -> {return new VuePartition(melodie);});
+
         Parent root = loader.load();
         primaryStage.setScene(new Scene(root, 640,400));
         primaryStage.show();
