@@ -1,55 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.text.Text?>
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Arezzo.vue.Piano">
-  <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Melodie">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Nouveau" />
-            <MenuItem mnemonicParsing="false" text="Ouvrir" />
-            <MenuItem mnemonicParsing="false" text="Enregistrer sous ..." />
-            <MenuItem mnemonicParsing="false" text="Quitter" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Outils">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Renommer" />
-            <MenuItem mnemonicParsing="false" text="Transposer" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-      <GridPane alignment="CENTER" prefHeight="412.0" prefWidth="656.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button fx:id="buttonDo" mnemonicParsing="false" onAction="#appuieDo" prefHeight="136.0" prefWidth="368.0" text="Do">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </Button>
-            <Text fx:id="chaine" GridPane.columnIndex="1" />
-         </children>
-      </GridPane>
-  </children>
-</VBox>
+
+<MenuBar xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Arezzo.vue.VuePiano">
+<menus>
+  <Menu mnemonicParsing="false" text="Melodie">
+    <items>
+      <MenuItem mnemonicParsing="false" text="Nouveau" />
+      <MenuItem mnemonicParsing="false" text="Ouvrir" />
+      <MenuItem mnemonicParsing="false" text="Enregistrer sous ..." />
+      <MenuItem mnemonicParsing="false" text="Quitter" />
+    </items>
+  </Menu>
+  <Menu mnemonicParsing="false" text="Outils">
+    <items>
+      <MenuItem mnemonicParsing="false" text="Renommer" />
+      <MenuItem mnemonicParsing="false" text="Transposer" />
+    </items>
+  </Menu>
+</menus>
+</MenuBar>

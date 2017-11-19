@@ -7,18 +7,19 @@ import partition.*;
 
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
+import java.util.Observable;
 
 /**
  * Cree par Aurelien Benoit le 17/11/2017.
  * Version simplifiee de la gestion de Partition, utile car la HashMap bug sous Windows (?!)
  * Inspiree de la classe Partition de l'archive partition.jar fournie par TELECOM Nancy
  */
-public class Partition2 {
+public class Partition2 extends Observable {
 
-    protected PartitionAbstraite melodie;
-    protected PartitionAbstraite uneNote;
-    protected TunePlayer player;
-    protected Synthesizer synthe;
+    private PartitionAbstraite melodie;
+    private PartitionAbstraite uneNote;
+    private TunePlayer player;
+    private Synthesizer synthe;
 
     public Partition2(Synthesizer synthesizer) {
         this.synthe = synthesizer;
@@ -36,6 +37,8 @@ public class Partition2 {
 
     public void setMelodie(String m) {
         this.melodie.setMelodie(m);
+        this.setChanged();
+        this.notifyObservers();
     }
 
     public void setMelodieNotationAbcComplete(String m) {

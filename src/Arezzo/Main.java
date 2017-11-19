@@ -1,48 +1,53 @@
 package Arezzo;
 
 import Arezzo.modèle.Partition2;
-import abc.midi.TunePlayer;
-import com.sun.media.sound.SoftInstrument;
+import Arezzo.vue.VueBouton;
+import Arezzo.vue.VuePiano;
+import Arezzo.vue.VuePartition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import partition.Melodie;
-import partition.Partition;
 
-import javax.sound.midi.Instrument;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Synthesizer;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class Main extends Application {
 
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader();
-        Melodie melodie  = new Melodie(new TunePlayer());
-        melodie.setMelodie("");
 
-        try {
-            Synthesizer synthe = MidiSystem.getSynthesizer();
-            Partition2 part = new Partition2(synthe);
-            part.setMelodie("C C C ");
-            part.play();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
 
-        /*loader.setLocation(getClass().getResource("vue/principale.fxml"));
+        FXMLLoader loader;
+        GridPane root = new GridPane();
 
-        Parent root = loader.load();
-        primaryStage.setScene(new Scene(root, 640,400));
+        //Creation du modèle
+        Synthesizer synthe = MidiSystem.getSynthesizer();
+        final Partition2 partition = new Partition2(synthe);;
+
+        //Creation du VuePiano
+        loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./vue/vuePiano.fxml"));
+        loader.setControllerFactory(c -> {return new VuePiano(partition);});
+        root.add(loader.load(),0,0);
+
+        //Creation de la VuePartition
+        loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./vue/vuePartition.fxml"));
+        loader.setControllerFactory(c -> {return new VuePartition(partition);});
+        root.add(loader.load(), 1, 0);
+
+        //Creation du bouton Play
+        loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("./vue/vueBouton.fxml"));
+        loader.setControllerFactory(c -> {return new VueBouton(partition);});
+        root.add(loader.load(),1,1);
+
+        primaryStage.setScene(new Scene(root, 1200,800));
         primaryStage.show();
-        */
+        
     }
 
 
