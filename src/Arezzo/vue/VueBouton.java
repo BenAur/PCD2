@@ -1,5 +1,6 @@
 package Arezzo.vue;
 
+import Arezzo.modèle.ArrezoModel;
 import Arezzo.modèle.Partition2;
 import javafx.fxml.FXML;
 
@@ -8,14 +9,14 @@ import javafx.fxml.FXML;
  * Created by Aurelien on 19/11/2017.
  */
 public class VueBouton {
-    private Partition2 partition;
+    private ArrezoModel model;
 
-    public VueBouton(Partition2 partition){
-        this.partition = partition;
+    public VueBouton(ArrezoModel model){
+        this.model = model;
     }
 
     @FXML
     public void appuiePlay(){
-        this.partition.play();
+        this.model.play();
     }
 }
