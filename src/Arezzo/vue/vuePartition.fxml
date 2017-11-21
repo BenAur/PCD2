@@ -3,9 +3,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Arezzo.vue.VuePartition">
-   <children>
-      <ImageView fx:id="imagePartition" fitHeight="400" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
-   </children>
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Arezzo.vue.VuePartition">
+   <ImageView fx:id="imagePartition" fitHeight="400" fitWidth="600.0" pickOnBounds="true" preserveRatio="true"/>
 </Pane>
